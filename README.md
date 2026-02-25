@@ -1,9 +1,9 @@
-# OpenClaw-hotskills-zh 🇨🇳
+# OpenClaw-hot-skills-zh 🇨🇳
 
 > 致力于将 clawhub.ai 平台的优质安全项目转化为中文版 Skills。降低阅读理解门槛，提供更符合中文开发者习惯的开源技能库。
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/L-LesterYu/OpenClaw-hotskills-zh.svg?style=social)](https://github.com/L-LesterYu/OpenClaw-hotskills-zh/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/L-LesterYu/OpenClaw-hot-skills-zh.svg?style=social)](https://github.com/L-LesterYu/OpenClaw-hot-skills-zh/stargazers)
 
 ## 📖 项目简介
 
@@ -41,7 +41,7 @@
 **安装**：
 ```bash
 cd ~/.openclaw/skills/
-git clone https://github.com/L-LesterYu/OpenClaw-hotskills-zh.git temp-repo
+git clone https://github.com/L-LesterYu/OpenClaw-hot-skills-zh.git temp-repo
 cp -r temp-repo/skills/ontology-zh ./
 rm -rf temp-repo
 ```
@@ -95,7 +95,7 @@ brew install steipete/tap/gogcli
 
 # 2. 安装 Skill
 cd ~/.openclaw/skills/
-git clone https://github.com/L-LesterYu/OpenClaw-hotskills-zh.git temp-repo
+git clone https://github.com/L-LesterYu/OpenClaw-hot-skills-zh.git temp-repo
 cp -r temp-repo/skills/gog-zh ./
 rm -rf temp-repo
 ```
@@ -143,7 +143,7 @@ agent-browser install  # 下载 Chromium（约30秒）
 
 # 2. 安装 Skill
 cd ~/.openclaw/skills/
-git clone https://github.com/L-LesterYu/OpenClaw-hotskills-zh.git temp-repo
+git clone https://github.com/L-LesterYu/OpenClaw-hot-skills-zh.git temp-repo
 cp -r temp-repo/skills/Agent-Browser-zh ./
 rm -rf temp-repo
 ```
@@ -192,7 +192,7 @@ agent-browser close
 **安装**：
 ```bash
 cd ~/.openclaw/skills/
-git clone https://github.com/L-LesterYu/OpenClaw-hotskills-zh.git temp-repo
+git clone https://github.com/L-LesterYu/OpenClaw-hot-skills-zh.git temp-repo
 cp -r temp-repo/skills/self-improvement-zh ./
 rm -rf temp-repo
 ```
@@ -210,12 +210,12 @@ rm -rf temp-repo
 
 1. **克隆仓库**
 ```bash
-git clone https://github.com/L-LesterYu/OpenClaw-hotskills-zh.git
+git clone https://github.com/L-LesterYu/OpenClaw-hot-skills-zh.git
 ```
 
 2. **选择并安装 Skill**
 ```bash
-cd OpenClaw-hotskills-zh/
+cd OpenClaw-hot-skills-zh/
 cp -r <skill-name> ~/.openclaw/skills/
 ```
 
@@ -274,8 +274,8 @@ ls ~/.openclaw/skills/<skill-name>/
 
 ## 📮 联系方式
 
-- **项目地址**: https://github.com/L-LesterYu/OpenClaw-hotskills-zh
-- **问题反馈**: [GitHub Issues](https://github.com/L-LesterYu/OpenClaw-hotskills-zh/issues)
+- **项目地址**: https://github.com/L-LesterYu/OpenClaw-hot-skills-zh
+- **问题反馈**: [GitHub Issues](https://github.com/L-LesterYu/OpenClaw-hot-skills-zh/issues)
 
 ---
 
