@@ -42,7 +42,7 @@
 ```bash
 cd ~/.openclaw/skills/
 git clone https://github.com/L-LesterYu/OpenClaw-hotskills-zh.git temp-repo
-cp -r temp-repo/ontology-zh ./
+cp -r temp-repo/skills/ontology-zh ./
 rm -rf temp-repo
 ```
 
@@ -70,7 +70,7 @@ python3 scripts/ontology.py relate --from proj_001 --rel has_task --to task_001
 - "链接X到Y" → 创建关系
 - "显示项目Z的所有任务" → 图遍历
 
-[查看详细文档](./SKILL.md) | [查询参考](./references/queries.md) | [模式定义](./references/schema.md)
+[查看详细文档](./skills/ontology-zh/SKILL.md) | [查询参考](./skills/ontology-zh/references/queries.md) | [模式定义](./skills/ontology-zh/references/schema.md)
 
 ---
 
