@@ -18,7 +18,54 @@
 
 ## 📦 已发布的 Skills
 
-### 1. self-improvement-zh - 自我改进技能
+### 1. gog-zh - Google Workspace 命令行工具
+
+**版本**: v1.0.0
+**状态**: ✅ 已发布
+**来源**: [ClawHub - Gog](https://clawhub.ai/kn70pywhg0fyz996kpa8xj89s57yhv26/gog)
+
+**功能**：
+- 📧 **Gmail 管理**：搜索、发送邮件
+- 📅 **日历操作**：查询和管理日历事件
+- 💾 **云盘搜索**：搜索 Google Drive 文件
+- 👥 **联系人管理**：列出和管理联系人
+- 📊 **表格操作**：读取、更新、追加、清除表格数据
+- 📄 **文档处理**：导出和查看 Google Docs
+
+**安装**：
+```bash
+# 1. 安装 gog CLI 工具
+brew install steipete/tap/gogcli
+
+# 2. 安装 Skill
+cd ~/.openclaw/skills/
+git clone https://github.com/L-LesterYu/OpenClaw-hotskills-zh.git temp-repo
+cp -r temp-repo/skills/gog-zh ./
+rm -rf temp-repo
+```
+
+**使用**：
+```bash
+# 设置 OAuth 凭证
+gog auth credentials /path/to/client_secret.json
+gog auth add you@gmail.com --services gmail,calendar,drive,contacts,sheets,docs
+
+# 常用命令示例
+gog gmail search 'newer_than:7d' --max 10
+gog calendar events <calendarId> --from <iso> --to <iso>
+gog sheets get <sheetId> "工作表!A1:D10" --json
+```
+
+**注意事项**：
+- 需要配置 Google OAuth 凭证
+- 设置 `GOG_ACCOUNT` 环境变量可简化命令
+- 发送邮件或创建事件前请确认
+
+[查看详细文档](./skills/gog-zh/SKILL.md)
+
+---
+
+### 2. self-improvement-zh - 自我改进技能
 
 **版本**: v1.0.0
 **状态**: ✅ 已发布
@@ -76,6 +123,9 @@ OpenClaw-hotskills-zh/
 ├── README.md                   # 项目说明文档
 ├── LICENSE                     # MIT 许可证
 ├── skills/                     # Skills 目录
+│   ├── gog-zh/                # Google Workspace 工具（中文版）
+│   │   ├── SKILL.md           # 技能主文档
+│   │   └── _meta.json         # 元数据
 │   └── self-improvement-zh/   # 自我改进技能（中文版）
 │       ├── SKILL.md           # 技能主文档
 │       ├── README.md          # 详细使用说明
