@@ -246,8 +246,6 @@ ls ~/.openclaw/skills/<skill-name>/
 
 ## 📝 待办事项
 
-- [x] ~~添加 Ontology 中文版~~ ✅
-- [x] ~~添加 Agent-Browser 中文版~~ ✅
 - [ ] 添加更多 ClawHub 优质 Skills 的中文版本
 - [ ] 创建自动化测试脚本
 - [ ] 建立持续集成/持续部署流程
