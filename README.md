@@ -199,6 +199,58 @@ rm -rf temp-repo
 
 [查看详细文档](./skills/self-improvement-zh/README.md)
 
+---
+
+### 5. proactive-agent-zh - 主动式 Agent
+
+**版本**: v3.1.0
+**状态**: ✅ 已发布
+**来源**: [ClawHub - Proactive Agent](https://clawhub.ai)
+
+**功能**：
+- 🎯 **主动预测** — 无需被询问就预测需求并创造价值
+- 💾 **持久记忆** — 通过 WAL 协议和工作缓冲区在上下文丢失中存活
+- 🔄 **自我改进** — 持续学习和进化，更好地为您服务
+- 🔒 **安全加固** — 技能审查、注入防护、上下文泄漏防护
+- ⚡ **不懈机智** — 在放弃前尝试 10 种方法解决问题
+
+**核心协议**：
+- **WAL 协议**：预写日志，在响应前捕获所有关键细节
+- **工作缓冲区**：在内存压缩的危险区域捕获每次交互
+- **压缩恢复**：上下文丢失后的分步恢复机制
+- **统一搜索**：在说"不知道"前搜索所有来源
+
+**三大支柱**：
+1. **主动** — 预测需求，反向提示，主动签到
+2. **持久** — WAL 协议，工作缓冲区，压缩恢复
+3. **自我改进** — 自我修复，不懈机智，安全演进
+
+**安装**：
+```bash
+cd ~/.openclaw/skills/
+git clone https://github.com/L-LesterYu/OpenClaw-hot-skills-zh.git temp-repo
+cp -r temp-repo/skills/proactive-agent-zh ./
+rm -rf temp-repo
+```
+
+**快速开始**：
+```bash
+# 复制资产文件到工作区
+cp ~/.openclaw/skills/proactive-agent-zh/assets/*.md ./
+
+# Agent 会检测到 ONBOARDING.md 并主动了解您
+# 运行安全审计
+bash ~/.openclaw/skills/proactive-agent-zh/scripts/security-audit.sh
+```
+
+**使用场景**：
+- 让 Agent 从被动响应变为主动预测
+- 构建能在会话重启后保持连续性的 AI
+- 自动记录决策、修正和重要细节
+- 实现"在说不知道前先搜索"的智能行为
+
+[查看详细文档](./skills/proactive-agent-zh/SKILL.md) | [入门流程](./skills/proactive-agent-zh/references/onboarding-flow.md) | [安全模式](./skills/proactive-agent-zh/references/security-patterns.md)
+
 ## 🚀 快速开始
 
 ### 前置要求
