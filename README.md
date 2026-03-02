@@ -361,6 +361,50 @@ rm -rf temp-repo
 
 [查看详细文档](./skills/find-skills-zh/SKILL.md)
 
+---
+
+### 8. humanizer-zh - AI 文本人性化工具
+
+**版本**: v2.2.0
+**状态**: ✅ 已发布
+**来源**: [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)
+
+**功能**：
+- 🔍 **AI 痕迹识别**：检测 24 种 AI 写作模式
+- ✏️ **文本人性化**：将 AI 生成的文本重写为更自然的表达
+- 🎭 **个性注入**：不仅移除不良模式，更注入真实的个性
+- 📚 **全面指南**：基于维基百科 AI 写作迹象指南
+- 🌐 **中文优化**：完整汉化的检测和修复规则
+
+**检测模式**：
+- **内容模式**：过度强调重要性、促销语言、肤浅分析、模糊归因
+- **语言模式**：AI 词汇过度使用、系词回避、否定平行结构
+- **风格模式**：破折号/粗体过度使用、表情符号滥用
+- **沟通模式**：协作产物、知识截止免责声明、奉承语调
+
+**安装**：
+```bash
+cd ~/.openclaw/skills/
+git clone https://github.com/L-LesterYu/OpenClaw-hot-skills-zh.git temp-repo
+cp -r temp-repo/skills/humanizer-zh ./
+rm -rf temp-repo
+```
+
+**使用场景**：
+- 编辑或审查 AI 生成的文本
+- 移除文章中的 AI 写作痕迹
+- 让内容更加自然和人性化
+- 检测文档是否由 AI 生成
+
+**工作流程**：
+1. 识别文本中的 AI 模式
+2. 重写问题段落
+3. 保留原意和语调
+4. 注入个性与灵魂
+5. 最终反 AI 检查
+
+[查看详细文档](./skills/humanizer-zh/SKILL.md)
+
 ## 🚀 快速开始
 
 ### 前置要求
