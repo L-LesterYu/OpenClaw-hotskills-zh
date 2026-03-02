@@ -1,0 +1,37 @@
+name: frontend-design-ultimate
+summary: Workflow/generator skill for producing distinctive frontend static sites with React, Tailwind, and shadcn/ui.
+description: >-
+  Discoverability metadata for frontend-design-ultimate. This skill is the workflow
+  and generator layer for static-site and marketing-site creation, with strong
+  anti-generic design defaults and production-ready scaffolding.
+aliases:
+  - frontend design ultimate
+  - frontend-design-ultimate
+  - static site generator frontend
+  - frontend static site generator
+  - react tailwind site generator
+  - marketing site generator
+keywords:
+  - frontend
+  - ui
+  - web design
+  - static site
+  - static site generation
+  - site generator
+  - landing pages
+  - marketing pages
+  - react
+  - tailwind
+  - shadcn
+  - vite
+  - nextjs
+  - anti-slop defaults
+  - workflow layer
+  - generator layer
+category: frontend
+layer: workflow-generator
+composes_with:
+  - design-taste-frontend
+notes:
+  - This repo should remain the workflow/generator layer.
+  - Compose with design-taste-frontend when stricter anti-slop guardrails are required.

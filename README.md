@@ -405,6 +405,67 @@ rm -rf temp-repo
 
 [查看详细文档](./skills/humanizer-zh/SKILL.md)
 
+---
+
+### 9. frontend-design-zh - 前端设计终极版
+
+**版本**: v0.1.0
+**状态**: ✅ 已发布
+**来源**: [ClawHub - Frontend Design](https://clawhub.ai)
+
+**功能**：
+- 🎨 **独特设计生成**：从纯文本需求创建大胆、令人难忘的设计
+- 🚫 **反AI套路美学**：避免通用模板，创造有个性的界面
+- 📱 **移动优先响应式**：完整的移动端适配模式
+- 📦 **单文件打包**：支持打包为单个 HTML 文件
+- 🔧 **双工作流支持**：Vite（纯静态）和 Next.js（Vercel 部署）
+
+**技术栈**：
+- React 18 + TypeScript
+- Tailwind CSS + shadcn/ui
+- Framer Motion 动画库
+
+**核心特性**：
+- **设计思维指导**：8种极端基调选择（极简主义、繁复混乱、复古未来等）
+- **排版规范**：禁止通用字体，使用独特、有个性的字体选择
+- **色彩系统**：70-20-10 法则，坚定选择深色或浅色主题
+- **动效策略**：协调的页面加载动画，高影响力时刻设计
+- **空间构成**：有目的的不对称，重叠元素，对角线流动
+
+**安装**：
+```bash
+cd ~/.openclaw/skills/
+git clone https://github.com/L-LesterYu/OpenClaw-hot-skills-zh.git temp-repo
+cp -r temp-repo/skills/frontend-design-zh ./
+rm -rf temp-repo
+```
+
+**快速开始**：
+```bash
+# Vite 工作流（纯静态）
+bash scripts/init-vite.sh my-site
+cd my-site
+npm run dev
+
+# Next.js 工作流（Vercel 部署）
+bash scripts/init-nextjs.sh my-site
+cd my-site
+npm run dev
+```
+
+**使用场景**：
+- "为 AI 写作工具构建 SaaS 落地页"
+- "创建摄影师的作品集网站"
+- "设计营销网站或仪表盘"
+- "构建任何静态 Web 界面"
+
+**预装组件**：
+- Button, Badge, Card, Accordion
+- Dialog, NavigationMenu, Tabs
+- Sheet, Separator, Avatar, Alert
+
+[查看详细文档](./skills/frontend-design-zh/SKILL.md) | [设计哲学](./skills/frontend-design-zh/references/design-philosophy.md) | [移动端模式](./skills/frontend-design-zh/references/mobile-patterns.md)
+
 ## 🚀 快速开始
 
 ### 前置要求
