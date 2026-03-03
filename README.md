@@ -538,6 +538,72 @@ gh api repos/owner/repo/pulls/55 --jq '.title, .state'
 
 [查看详细文档](./skills/github-zh/SKILL.md)
 
+---
+
+### 11. clawddocs-zh - Clawdbot 文档专家
+
+**版本**: v5.0.0
+**状态**: ✅ 已发布
+**来源**: [ClawHub - Clawdbot Documentation Expert](https://clawhub.ai)
+
+**功能**：
+- 🎯 **决策树导航**：智能识别用户需求，快速定位相关文档
+- 🔍 **搜索脚本**：站点地图、关键词搜索、全文索引（支持 qmd）
+- 📖 **文档获取**：快速获取特定文档内容
+- 📊 **版本跟踪**：监控文档变更，对比历史版本
+- ⚙️ **配置片段**：提供即用型配置模式，涵盖所有 Clawdbot 功能
+
+**文档类别**：
+- 🚀 入门指南（`/start/`）
+- 🔧 网关与运维（`/gateway/`）
+- 💬 提供商（`/providers/`）
+- 🧠 核心概念（`/concepts/`）
+- 🛠️ 工具（`/tools/`）
+- ⚡ 自动化（`/automation/`）
+- 💻 命令行（`/cli/`）
+- 📱 平台（`/platforms/`）
+
+**安装**：
+```bash
+cd ~/.openclaw/skills/
+git clone https://github.com/L-LesterYu/OpenClaw-hot-skills-zh.git temp-repo
+cp -r temp-repo/skills/clawddocs-zh ./
+rm -rf temp-repo
+```
+
+**快速开始**：
+```bash
+# 查看所有文档
+./scripts/sitemap.sh
+
+# 按关键词搜索
+./scripts/search.sh discord
+
+# 获取特定文档
+./scripts/fetch-doc.sh gateway/configuration
+
+# 查看最近更新
+./scripts/recent.sh 7
+
+# 全文搜索（需要 qmd）
+./scripts/build-index.sh search "webhook retry"
+```
+
+**使用场景**：
+- "如何设置 Discord？"
+- "为什么我的机器人不工作？"
+- "如何配置定时任务？"
+- "Clawdbot 有什么新功能？"
+- "给我一个 Webhook 配置示例"
+
+**提示**：
+- 优先使用缓存的站点地图（1 小时 TTL）
+- 对于复杂问题，使用全文索引搜索
+- 查看 `snippets/common-configs.md` 获取配置示例
+- 回答时链接到文档：`https://docs.clawd.bot/<路径>`
+
+[查看详细文档](./skills/clawddocs-zh/SKILL.md)
+
 ## 🚀 快速开始
 
 ### 前置要求

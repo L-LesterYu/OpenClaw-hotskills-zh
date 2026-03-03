@@ -1,0 +1,9 @@
+{
+  "name": "clawddocs-zh",
+  "version": "1.2.2",
+  "description": "Clawdbot 文档专家，具备决策树导航、搜索脚本、文档获取、版本跟踪和所有 Clawdbot 功能的配置片段",
+  "main": "SKILL.md",
+  "keywords": ["clawdbot", "documentation", "help", "docs", "中文"],
+  "author": "NicholasSpisak",
+  "license": "MIT"
+}
