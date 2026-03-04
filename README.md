@@ -662,6 +662,87 @@ python3 ~/.openclaw/skills/youtube-watcher-zh/scripts/get_transcript.py "https:/
 
 [查看详细文档](./skills/youtube-watcher-zh/SKILL.md)
 
+---
+
+### 13. freeride-zh - OpenRouter 免费AI管理
+
+**版本**: v1.0.1
+**状态**: ✅ 已发布
+**来源**: [ClawHub - FreeRide](https://clawhub.ai)
+
+**功能**：
+- 🆓 **免费 AI 访问**：配置 OpenClaw 使用 OpenRouter 的免费 AI 模型
+- 🎯 **智能模型选择**：自动选择最佳免费模型作为主模型
+- 🔄 **故障切换**：添加备用模型，在限流时自动切换不中断服务
+- 📊 **质量排名**：按模型质量和可用性自动排名
+- ⚙️ **配置管理**：自动更新 openclaw.json 配置文件
+
+**核心命令**：
+- `freeride auto` - 配置最佳免费模型 + 备用模型
+- `freeride list` - 查看可用的免费模型
+- `freeride switch <model>` - 切换到指定模型
+- `freeride status` - 检查当前配置
+- `freeride fallbacks` - 仅更新备用模型
+
+**安装**：
+```bash
+cd ~/.openclaw/skills/
+git clone https://github.com/L-LesterYu/OpenClaw-hot-skills-zh.git temp-repo
+cp -r temp-repo/skills/freeride-zh ./
+rm -rf temp-repo
+
+# 安装 Python 依赖
+cd ~/.openclaw/skills/freeride-zh
+pip install -e .
+```
+
+**快速开始**：
+```bash
+# 1. 设置 OpenRouter API Key
+export OPENROUTER_API_KEY="sk-or-v1-..."
+
+# 2. 配置免费模型
+freeride auto
+
+# 3. 重启网关应用更改
+openclaw gateway restart
+
+# 验证：用户发送 /status 查看当前模型
+```
+
+**使用场景**：
+- "我想使用免费的 AI 模型"
+- "配置 OpenRouter 免费模型"
+- "添加备用模型避免限流"
+- "查看有哪些免费模型可用"
+- "切换到特定的免费模型"
+
+**配置说明**：
+FreeRide 只更新 `~/.openclaw/openclaw.json` 中的模型配置：
+- `agents.defaults.model.primary` — 主模型（如 `openrouter/qwen/qwen3-coder:free`）
+- `agents.defaults.model.fallbacks` — 备用模型列表
+- `agents.defaults.models` — 模型白名单
+
+其他配置保持不变，安全可靠。
+
+**监控器（可选）**：
+```bash
+freeride-watcher --daemon    # 持续监控并自动轮换
+freeride-watcher --rotate    # 立即强制轮换
+freeride-watcher --status    # 检查轮换历史
+```
+
+**获取 API Key**：
+1. 访问 [OpenRouter](https://openrouter.ai/) 注册账号
+2. 在 [API Keys](https://openrouter.ai/keys) 页面获取免费密钥
+
+**注意事项**：
+- 需要设置 `OPENROUTER_API_KEY` 环境变量
+- 配置更改后需运行 `openclaw gateway restart`
+- 免费模型有速率限制，建议配置备用模型
+
+[查看详细文档](./skills/freeride-zh/SKILL.md)
+
 ## 🚀 快速开始
 
 ### 前置要求
