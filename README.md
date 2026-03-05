@@ -1162,6 +1162,115 @@ export GEMINI_API_KEY="your-api-key"
 
 [查看详细文档](./skills/nano-banana-pro-zh/SKILL.md)
 
+---
+
+### 19. notion-skill-zh - Notion 操作工具
+
+**版本**: v1.0.0
+**状态**: ✅ 已发布
+**来源**: [ClawHub - Notion](https://clawhub.ai)
+**首页**: https://developers.notion.com
+
+**功能**：
+- 📄 **页面管理**：读取、创建和更新 Notion 页面
+- 📝 **内容操作**：向页面追加内容块（支持 Markdown）
+- 🗃️ **数据库操作**：查询、创建和更新数据库行
+- 🔍 **架构检查**：安全地检查和应用数据库架构变更
+- 🔒 **安全优先**：优先使用追加和更新操作，避免破坏性操作
+
+**核心能力**：
+- 通过官方 Notion API 操作页面和数据库
+- 支持多个配置文件（个人/工作）
+- 完整的 CRUD 操作支持
+- 架构变更前的差异检查
+- 遵循 Notion API 速率限制
+
+**安装**：
+```bash
+# 1. 安装 Notion CLI（选择一种方式）
+# Node.js 版本
+npm install -g notion-cli
+
+# Python 版本
+pip install notion-cli-py
+
+# 2. 安装 Skill
+cd ~/.openclaw/skills/
+git clone https://github.com/L-LesterYu/OpenClaw-hot-skills-zh.git temp-repo
+cp -r temp-repo/skills/notion-skill-zh ./
+rm -rf temp-repo
+```
+
+**快速开始**：
+```bash
+# 1. 创建 Notion 集成
+# 访问 https://www.notion.so/my-integrations 创建集成
+# 复制内部集成令牌
+
+# 2. 设置环境变量
+export NOTION_API_KEY=secret_xxx
+
+# 3. 将集成与页面/数据库共享
+# 在 Notion 中，点击页面/数据库的"..."菜单
+# 选择"添加连接" → 选择你的集成
+
+# 4. 常用操作
+# 读取页面
+notion-cli page get <page_id>
+
+# 追加内容
+notion-cli block append <page_id> --markdown "# 标题\n内容"
+
+# 查询数据库
+notion-cli db query <database_id> --filter '{"property":"状态","select":{"equals":"进行中"}}'
+
+# 创建数据库行
+notion-cli page create --database <database_id> --props '{"名称":{"title":[{"text":{"content":"新任务"}}]}}'
+```
+
+**配置文件**：
+```bash
+# 默认配置文件：personal
+# 切换到工作配置
+export NOTION_PROFILE=work
+```
+
+**使用场景**：
+- "读取这个 Notion 页面的内容"
+- "在我的任务数据库中创建一个新任务"
+- "查询所有状态为进行中的项目"
+- "向会议记录页面追加今天的笔记"
+- "更新这个数据库行的状态"
+
+**安全注意事项**：
+- Notion API 有速率限制，批量操作需谨慎
+- 优先使用追加和更新操作，避免破坏性操作
+- ID 是不透明的，需要明确存储，不要从 URL 推断
+- 架构变更前始终先检查差异
+
+**架构变更流程**：
+```bash
+# 1. 检查差异
+notion-cli db schema diff <database_id> --desired <json>
+
+# 2. 确认后应用
+notion-cli db schema apply <database_id> --desired <json>
+```
+
+**注意事项**：
+- 需要先创建 Notion 集成并获取 API 密钥
+- 必须将集成与要访问的页面/数据库共享
+- 未共享的内容对 API 不可见
+- 支持多配置文件以管理不同的 Notion 工作区
+
+**获取 API Key**：
+1. 访问 https://www.notion.so/my-integrations
+2. 点击"新建集成"
+3. 填写集成名称和关联工作区
+4. 复制"内部集成令牌"（以 `secret_` 开头）
+
+[查看详细文档](./skills/notion-skill-zh/SKILL.md)
+
 ## 🚀 快速开始
 
 ### 前置要求
