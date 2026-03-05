@@ -983,6 +983,91 @@ https://gateway.maton.ai/{app}/{native-api-path}
 
 [查看详细文档](./skills/api-gateway-zh/SKILL.md) | [Maton 官网](https://maton.ai)
 
+---
+
+### 17. openai-whisper-zh - 语音转文字工具
+
+**版本**: v1.0.0
+**状态**: ✅ 已发布
+**来源**: [ClawHub - Openai Whisper](https://clawhub.ai)
+**首页**: https://openai.com/research/whisper
+
+**功能**：
+- 🎙️ **本地转录**：使用 Whisper CLI 在本地进行语音转文字
+- 🔒 **无需 API**：完全本地化处理，无需 API 密钥
+- 🎵 **多格式支持**：支持 MP3、M4A、WAV 等多种音频格式
+- 🌐 **翻译功能**：支持将音频翻译为其他语言
+- 📝 **多输出格式**：支持 TXT、SRT、VTT 等多种输出格式
+
+**核心命令**：
+```bash
+# 转录音频文件
+whisper /path/audio.mp3 --model medium --output_format txt --output_dir .
+
+# 翻译音频内容
+whisper /path/audio.m4a --task translate --output_format srt
+
+# 使用不同模型
+whisper /path/audio.wav --model small   # 快速
+whisper /path/audio.wav --model large   # 准确
+```
+
+**模型说明**：
+- `tiny` - 最快，准确性较低
+- `base` - 平衡速度和准确性
+- `small` - 较好的准确性
+- `medium` - 高准确性
+- `large` - 最高准确性，最慢
+- `turbo` - 默认模型，优化的速度/准确性平衡
+
+**安装**：
+```bash
+# 1. 安装 Whisper CLI（选择一种方式）
+# macOS
+brew install openai-whisper
+
+# Linux/Windows
+pip install openai-whisper
+
+# 2. 安装 Skill
+cd ~/.openclaw/skills/
+git clone https://github.com/L-LesterYu/OpenClaw-hot-skills-zh.git temp-repo
+cp -r temp-repo/skills/openai-whisper-zh ./
+rm -rf temp-repo
+```
+
+**快速开始**：
+```bash
+# 转录音频文件为文本
+whisper meeting.mp3 --model medium --output_format txt
+
+# 生成字幕文件
+whisper video.m4a --output_format srt
+
+# 翻译外语音频
+whisper foreign.mp3 --task translate
+```
+
+**使用场景**：
+- 会议录音转文字
+- 视频字幕生成
+- 播客内容转录
+- 外语音频翻译
+- 语音笔记整理
+
+**注意事项**：
+- 首次运行时会自动下载模型到 `~/.cache/whisper`
+- 模型文件较大（几百 MB 到几 GB）
+- 较大的模型提供更高的准确性但速度较慢
+- 建议使用 `turbo` 或 `medium` 模型作为平衡选择
+
+**资源需求**：
+- Python 3.8+
+- PyTorch（首次使用时自动安装）
+- 足够的磁盘空间存储模型
+
+[查看详细文档](./skills/openai-whisper-zh/SKILL.md)
+
 ## 🚀 快速开始
 
 ### 前置要求
