@@ -1271,6 +1271,91 @@ notion-cli db schema apply <database_id> --desired <json>
 
 [查看详细文档](./skills/notion-skill-zh/SKILL.md)
 
+---
+
+### 20. brave-web-search-zh - Brave 网页搜索
+
+**版本**: v1.0.1
+**状态**: ✅ 已发布
+**来源**: [ClawHub - Brave Web Search](https://clawhub.ai)
+
+**功能**：
+- 🔍 **智能搜索**：使用 Brave Search API 进行高质量网页搜索
+- 🤖 **AI 摘要**：获取 Brave Summarizer 生成的简洁 AI 答案
+- 📊 **排序结果**：返回排序的网页结果，包含标题、URL 和摘要
+- ⏰ **时效筛选**：支持按时间范围筛选（过去一天/周/月）
+- 🛡️ **安全防护**：严格的 Shell 注入防护机制
+
+**核心命令**：
+```bash
+# 网页搜索（获取排序结果）
+node ~/.openclaw/skills/brave-web-search-zh/index.js brave-search --query "最新 AI 新闻" --count 10
+
+# AI 问答（获取摘要答案）
+node ~/.openclaw/skills/brave-web-search-zh/index.js brave-answer --query "什么是量子计算？"
+
+# 时效性搜索
+node ~/.openclaw/skills/brave-web-search-zh/index.js brave-search --query "今日热点" --freshness pd --count 5
+```
+
+**安装**：
+```bash
+cd ~/.openclaw/skills/
+git clone https://github.com/L-LesterYu/OpenClaw-hot-skills-zh.git temp-repo
+cp -r temp-repo/skills/brave-web-search-zh ./
+rm -rf temp-repo
+```
+
+**配置 API Key**：
+```bash
+# 设置环境变量
+export BRAVE_SEARCH_API_KEY="your-brave-search-api-key"
+export BRAVE_ANSWERS_API_KEY="your-brave-answers-api-key"
+```
+
+**快速开始**：
+```bash
+# 1. 获取 Brave API Key
+# 访问 https://brave.com/search/api/ 注册并获取 API 密钥
+
+# 2. 设置环境变量
+export BRAVE_SEARCH_API_KEY="xxx"
+export BRAVE_ANSWERS_API_KEY="xxx"
+
+# 3. 执行搜索
+node ~/.openclaw/skills/brave-web-search-zh/index.js brave-search --query "OpenClaw 教程" --count 5
+```
+
+**使用场景**：
+- "搜索关于机器学习的最新文章"
+- "查找 Python 异步编程的教程"
+- "今天有什么科技新闻？"
+- "什么是深度学习？"
+- "搜索最近一周的 AI 突破"
+
+**命令说明**：
+- `brave-search` - 适用于需要多个网页结果、URL 和摘要的场景
+- `brave-answer` - 适用于需要简洁 AI 答案的事实性问题
+- `--freshness` - 时间筛选：`pd`（过去一天）、`pw`（过去一周）、`pm`（过去一个月）
+
+**安全特性**：
+- 用户查询作为离散参数传递，防止 Shell 注入
+- 严格禁止将用户输入连接到 shell 命令字符串
+- 使用 `execFile` 风格调用，确保安全执行
+
+**获取 API Key**：
+1. 访问 [Brave Search API](https://brave.com/search/api/)
+2. 注册账号并创建 API 密钥
+3. 获取 Search API Key 和 Answers API Key
+
+**注意事项**：
+- 需要同时配置 `BRAVE_SEARCH_API_KEY` 和 `BRAVE_ANSWERS_API_KEY`
+- API 有调用频率限制，请合理使用
+- 如果 `brave-answer` 返回 `answer: null`，使用 `fallback_results`
+- 始终使用参数数组方式调用，不要拼接字符串
+
+[查看详细文档](./skills/brave-web-search-zh/SKILL.md)
+
 ## 🚀 快速开始
 
 ### 前置要求
