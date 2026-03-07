@@ -1,0 +1,19 @@
+{
+  "name": "obsidian",
+  "version": "1.0.0",
+  "description": "使用 obsidian-cli 管理 Obsidian 笔记库，支持日常笔记管理、任务追踪和内容组织",
+  "author": "ClawHub Community",
+  "license": "MIT",
+  "repository": "https://github.com/caneppelevitor/obsidian-cli",
+  "keywords": [
+    "obsidian",
+    "notes",
+    "markdown",
+    "cli",
+    "knowledge-management",
+    "task-tracking"
+  ],
+  "originalName": "Obsidian",
+  "localized": true,
+  "language": "zh-CN"
+}
