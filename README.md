@@ -2188,6 +2188,161 @@ rm -rf temp-repo
 
 [查看详细文档](./skills/markdown-converter-zh/SKILL.md)
 
+---
+
+### 33. trello-zh - Trello 技能
+
+**版本**: v1.0.0
+**状态**: ✅ 已发布
+**来源**: [ClawHub - Trello](https://clawhub.ai)
+
+**功能**：
+- 📋 **看板管理**：列出和管理 Trello 看板
+- 📝 **列表操作**：查看看板中的列表
+- 🎫 **卡片管理**：创建、查看、移动和归档卡片
+- 💬 **评论功能**：为卡片添加评论
+- 🔗 **REST API**：直接通过 Trello REST API 操作
+
+**核心能力**：
+- 列出所有看板
+- 列出看板中的列表
+- 列出列表中的卡片
+- 创建新卡片
+- 将卡片移动到其他列表
+- 为卡片添加评论
+- 归档卡片
+
+**安装**：
+```bash
+cd ~/.openclaw/skills/
+git clone https://github.com/L-LesterYu/OpenClaw-hot-skills-zh.git temp-repo
+cp -r temp-repo/skills/trello-zh ./
+rm -rf temp-repo
+```
+
+**快速开始**：
+```bash
+# 1. 获取 API 密钥和令牌
+# 访问 https://trello.com/app-key
+
+# 2. 设置环境变量
+export TRELLO_API_KEY="你的-api-密钥"
+export TRELLO_TOKEN="你的-令牌"
+
+# 3. 列出看板
+curl -s "https://api.trello.com/1/members/me/boards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN" | jq '.[] | {name, id}'
+
+# 4. 创建卡片
+curl -s -X POST "https://api.trello.com/1/cards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN" \
+  -d "idList={listId}" \
+  -d "name=卡片标题" \
+  -d "desc=卡片描述"
+```
+
+**使用场景**：
+- "列出我的 Trello 看板"
+- "在这个列表中创建一个新卡片"
+- "将这个卡片移动到另一个列表"
+- "为这个卡片添加评论"
+- "归档这个卡片"
+
+**注意事项**：
+- 需要安装 `jq` 工具用于 JSON 处理
+- 需要设置 `TRELLO_API_KEY` 和 `TRELLO_TOKEN` 环境变量
+- API 限制：每个密钥每 10 秒 300 次请求
+
+**API 限制**：
+- 每个 API 密钥每 10 秒 300 次请求
+- 每个令牌每 10 秒 100 次请求
+- `/1/members` 端点限制为每 900 秒 100 次请求
+
+[查看详细文档](./skills/trello-zh/SKILL.md)
+
+---
+
+### 34. youtube-zh - YouTube 研究与转录
+
+**版本**: v1.0.1
+**状态**: ✅ 已发布
+**来源**: [ClawHub - YouTube](https://clawhub.ai)
+
+**功能**：
+- 📹 **视频详情**：获取标题、描述、统计数据、发布日期
+- 📝 **字幕提取**：提取带时间戳的字幕文本
+- 📺 **频道信息**：获取频道信息和最近视频
+- 🔍 **视频搜索**：在 YouTube 内搜索视频
+- 🎬 **播放列表**：获取播放列表信息
+
+**核心能力**：
+- 通过 YouTube Data API v3 搜索视频
+- 获取详细的视频元数据
+- 提取视频字幕（支持多种语言）
+- 获取频道信息和统计数据
+- 支持播放列表查询
+- 提供 yt-dlp 备用方案
+
+**安装**：
+```bash
+# 1. 安装 MCP 服务器（主要方法）
+npm install -g zubeid-youtube-mcp-server
+
+# 2. 安装备用工具（如果 MCP 失败）
+pip install yt-dlp
+
+# 3. 安装 Skill
+cd ~/.openclaw/skills/
+git clone https://github.com/L-LesterYu/OpenClaw-hot-skills-zh.git temp-repo
+cp -r temp-repo/skills/youtube-zh ./
+rm -rf temp-repo
+```
+
+**快速开始**：
+```bash
+# 1. 获取 YouTube API 密钥
+# 访问 https://console.cloud.google.com
+# 启用 YouTube Data API v3
+# 创建 API 密钥
+
+# 2. 设置环境变量
+export YOUTUBE_API_KEY="你的-api-密钥"
+
+# 3. 使用 Skill
+# AI 会自动调用相应的工具进行视频搜索和信息提取
+```
+
+**使用场景**：
+- "搜索关于 X 的 YouTube 视频"
+- "获取这个视频的详细信息"
+- "提取这个视频的字幕"
+- "这个频道发布了什么视频？"
+- "获取这个播放列表的信息"
+
+**依赖要求**：
+- **主要方法**：zubeid-youtube-mcp-server (NPM 包)
+- **备用方法**：yt-dlp (Python 包)
+- **环境变量**：YOUTUBE_API_KEY
+
+**API 配置**：
+1. 访问 [Google Cloud Console](https://console.cloud.google.com)
+2. 创建/选择项目
+3. 启用 YouTube Data API v3
+4. 创建 API 密钥
+5. 可选：限制 API 密钥仅用于 YouTube Data API
+
+**注意事项**：
+- 需要设置 `YOUTUBE_API_KEY` 环境变量
+- YouTube API 有每日配额限制
+- 字幕提取依赖于视频是否有可用字幕
+- 建议使用 MCP 服务器方法以获得最佳性能
+
+**技术细节**：
+- 使用 YouTube Data API v3
+- 支持 MCP (Model Context Protocol) 服务器
+- 提供 yt-dlp 作为备用方案
+- 完整的中文文档和错误提示
+
+[查看详细文档](./skills/youtube-zh/SKILL.md)
+
 ## 🚀 快速开始
 
 ### 前置要求
