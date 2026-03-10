@@ -1,0 +1,7 @@
+{
+  "ownerId": "kn7444rny7jy2b0jtr6vxbfj2d805vrw",
+  "slug": "stock-market-pro-zh",
+  "version": "1.2.12",
+  "localName": "Stock Market Pro 专业股市分析",
+  "description": "基于 Yahoo Finance (yfinance) 的股票分析技能：实时报价、基本面分析、ASCII 趋势图、高分辨率技术图表（RSI/MACD/BB/VWAP/ATR），以及可选的新闻搜索和期权/资金流向分析。"
+}

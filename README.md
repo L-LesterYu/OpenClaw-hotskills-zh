@@ -1857,7 +1857,75 @@ rm -rf temp-repo
 
 ---
 
-### 29. skill-vetter-zh - 技能审查器
+### 29. stock-market-pro-zh - 专业股市分析
+
+**版本**: v1.0.0
+**状态**: ✅ 已发布
+**来源**: 基于 Yahoo Finance (yfinance)
+
+**功能**：
+- 📊 **实时报价**：获取股票价格和涨跌幅
+- 📈 **基本面分析**：市值、市盈率、每股收益、净资产收益率
+- 📉 **ASCII 趋势图**：终端友好的价格走势图
+- 🖼️ **高分辨率图表**：生成带技术指标的 PNG 图表（RSI/MACD/BB/VWAP/ATR）
+- 📰 **新闻搜索**：通过 DuckDuckGo 搜索相关新闻
+- 🔮 **期权/资金流向**：浏览器优先的 Unusual Whales 分析
+
+**安装**：
+```bash
+# 1. 安装 uv（Python 包管理器）
+# 从 https://github.com/astral-sh/uv 安装
+
+# 2. 安装 Skill
+cd ~/.openclaw/skills/
+git clone https://github.com/L-LesterYu/OpenClaw-hot-skills-zh.git temp-repo
+cp -r temp-repo/skills/stock-market-pro-zh ./
+rm -rf temp-repo
+```
+
+**快速开始**：
+```bash
+# 报价查询
+uv run --script ~/.openclaw/skills/stock-market-pro-zh/scripts/yf.py price TSLA
+
+# 基本面分析
+uv run --script ~/.openclaw/skills/stock-market-pro-zh/scripts/yf.py fundamentals NVDA
+
+# ASCII 趋势图
+uv run --script ~/.openclaw/skills/stock-market-pro-zh/scripts/yf.py history AAPL 6mo
+
+# 专业图表（PNG）
+uv run --script ~/.openclaw/skills/stock-market-pro-zh/scripts/yf.py pro 000660.KS 6mo
+
+# 一键报告（摘要 + 图表）
+uv run --script ~/.openclaw/skills/stock-market-pro-zh/scripts/yf.py report GOOGL
+```
+
+**使用场景**：
+- "查看 TSLA 的股价"
+- "分析 NVDA 的基本面"
+- "生成 AAPL 的技术图表"
+- "搜索某股票的新闻"
+- "查看期权的资金流向"
+
+**技术指标支持**：
+- RSI（相对强弱指数）
+- MACD（指数平滑异同移动平均线）
+- BB（布林带）
+- VWAP（成交量加权平均价）
+- ATR（平均真实波幅）
+
+**支持的市场**：
+- 美股（AAPL, TSLA, NVDA 等）
+- 港股（0700.HK 等）
+- 韩股（000660.KS 等）
+- 其他国际市场
+
+[查看详细文档](./skills/stock-market-pro-zh/SKILL.md)
+
+---
+
+### 30. skill-vetter-zh - 技能审查器
 
 **版本**: v1.0.0
 **状态**: ✅ 已发布
@@ -1944,7 +2012,7 @@ curl -s "https://raw.githubusercontent.com/OWNER/REPO/main/skills/SKILL_NAME/SKI
 
 ---
 
-### 30. automation-workflows-zh - 自动化工作流程
+### 31. automation-workflows-zh - 自动化工作流程
 
 **版本**: v0.1.0
 **状态**: ✅ 已发布
@@ -2037,7 +2105,7 @@ ROI = (节省的价值 - 工具成本) / 工具成本 × 100%
 
 ---
 
-### 31. humanize-ai-text-zh - AI 文本人性化工具
+### 32. humanize-ai-text-zh - AI 文本人性化工具
 
 **版本**: v2.0.0
 **状态**: ✅ 已发布
@@ -2104,7 +2172,7 @@ rm -rf temp-repo
 
 ---
 
-### 32. markdown-converter-zh - Markdown 转换器
+### 33. markdown-converter-zh - Markdown 转换器
 
 **版本**: v1.0.0
 **状态**: ✅ 已发布
@@ -2190,7 +2258,7 @@ rm -rf temp-repo
 
 ---
 
-### 33. trello-zh - Trello 技能
+### 34. trello-zh - Trello 技能
 
 **版本**: v1.0.0
 **状态**: ✅ 已发布
@@ -2260,7 +2328,7 @@ curl -s -X POST "https://api.trello.com/1/cards?key=$TRELLO_API_KEY&token=$TRELL
 
 ---
 
-### 34. youtube-zh - YouTube 研究与转录
+### 35. youtube-zh - YouTube 研究与转录
 
 **版本**: v1.0.1
 **状态**: ✅ 已发布
