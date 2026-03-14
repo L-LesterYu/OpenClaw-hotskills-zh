@@ -3249,6 +3249,76 @@ Agent 会：
 
 ---
 
+### 47. baidu-search-zh - 百度 AI 搜索
+
+**版本**: v1.0.0
+**状态**: ✅ 已发布
+**来源**: 百度 AI 搜索 API
+
+**功能**：
+- 🔍 **AI 优化搜索**：使用百度 AI 搜索 API 进行高质量网页搜索
+- 🌐 **中文优化**：完美支持中文搜索查询和结果展示
+- 📊 **结构化输出**：返回标题、链接、内容摘要的 JSON 格式
+- ⏰ **时效筛选**：支持按时间范围筛选（过去一天/周/月/年）
+- 🔒 **安全认证**：通过环境变量安全传递 API 密钥
+
+**核心命令**：
+```bash
+# 基础搜索
+python3 skills/baidu-search-zh/scripts/search.py '{"query":"人工智能"}'
+
+# 时间范围格式一 "YYYY-MM-DDtoYYYY-MM-DD" 示例
+python3 scripts/search.py '{"query":"最新新闻","freshness":"2025-09-01to2025-09-08"}'
+
+# 时间范围格式二 pd、pw、pm、py 示例
+python3 scripts/search.py '{"query":"最新新闻","freshness":"pd"}'
+
+# 设置 count 参数，指定返回结果数量
+python3 scripts/search.py '{"query":"旅游景点","count": 20}'
+```
+
+**安装**：
+```bash
+cd ~/.openclaw/skills/
+git clone https://github.com/L-LesterYu/OpenClaw-hot-skills-zh.git temp-repo
+cp -r temp-repo/skills/baidu-search-zh ./
+rm -rf temp-repo
+```
+
+**配置 API Key**：
+```bash
+# 设置环境变量
+export BAIDU_API_KEY="your-baidu-api-key"
+```
+
+**请求参数**：
+
+| 参数 | 类型 | 必填 | 默认值 | 说明 |
+|-------|------|----------|---------|-------------|
+| query | str | 是 | - | 搜索关键词 |
+| count | int | 否 | 10 | 返回结果数量，范围 1-50 |
+| freshness | str | 否 | 无 | 时间范围，两种格式：格式一为 "YYYY-MM-DDtoYYYY-MM-DD"；格式二包括 pd、pw、pm、py，分别代表过去 24 小时、过去 7 天、过去 31 天和过去 365 天 |
+
+**使用场景**：
+- "帮我搜索一下最新的 AI 新闻"
+- "查找关于 Python 异步编程的资料"
+- "今天有什么热点新闻？"
+- "搜索 OpenClaw 的使用教程"
+
+**获取 API Key**：
+1. 访问 [百度智能云](https://cloud.baidu.com/) 注册账号
+2. 开通千帆平台 AI 搜索服务
+3. 在控制台获取 API 密钥
+
+**注意事项**：
+- 需要设置 `BAIDU_API_KEY` 环境变量
+- 需要安装 Python 3 和 requests 库
+- API 有调用频率限制，请合理使用
+
+[查看详细文档](./skills/baidu-search-zh/SKILL.md)
+
+---
+
 
 ## 🚀 快速开始
 
